@@ -19,6 +19,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Scroll View List" />
+
+        <Button
+            android:id="@+id/btn_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ListView Demo" />
     </LinearLayout>
 
 

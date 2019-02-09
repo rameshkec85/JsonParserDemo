@@ -14,6 +14,7 @@ import android.widget.Button;
 public class DemoActivity extends AppCompatActivity implements View.OnClickListener {
     Button btn_json_parser;
     Button btn_scroll_list;
+    Button btn_listview;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,9 +23,11 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         //
         btn_json_parser = findViewById(R.id.btn_json_parser);
         btn_scroll_list = findViewById(R.id.btn_scroll_list);
+        btn_listview = findViewById(R.id.btn_listview);
         //
         btn_json_parser.setOnClickListener(this);
         btn_scroll_list.setOnClickListener(this);
+        btn_listview.setOnClickListener(this);
     }
 
     @Override
@@ -34,6 +37,9 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v.getId() == R.id.btn_scroll_list) {
             Intent intent = new Intent(this, ScrollviewActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_listview) {
+            Intent intent = new Intent(this, ListViewDemoActivity.class);
             startActivity(intent);
         }
     }

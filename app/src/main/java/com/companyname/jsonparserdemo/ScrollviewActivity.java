@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ScrollviewActivity extends AppCompatActivity {
     LinearLayout ll_container;
-    String jsonStr = "[{\"name\":\"Ramesh\",\"age\":25,\"marks\":94.3,\"phone\":96894944994,\"image\":\"https://avatars1.githubusercontent.com/u/1030165?s=460&v=4\",\"address\":{\"city\":\"Hyd\",\"state\":\"TL\"},\"latlng\":[23.000,72.000]},{\"name\":\"Siva\",\"age\":23,\"marks\":85.3,\"phone\":96894944994,\"image\":\"https://avatars1.githubusercontent.com/u/1030165?s=460&v=4\",\"address\":{\"city\":\"Vzm\",\"state\":\"AP\"}}]";
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,36 +34,11 @@ public class ScrollviewActivity extends AppCompatActivity {
         List<ContactBean> list = null;
         try {
 //            list = createList();
-            list = parseJson();
+            list = Helper.parseJson();
             populateCells(list);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
-
-    }
-
-    class ContactBean {
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        private String name;
-
-        public String getPhone() {
-            return phone;
-        }
-
-        public void setPhone(String phone) {
-            this.phone = phone;
-        }
-
-        private String phone;
     }
 
     private List<ContactBean> createList() {
@@ -93,23 +68,5 @@ public class ScrollviewActivity extends AppCompatActivity {
             ll_container.addView(view);
         }
     }
-    //
 
-    List<ContactBean> parseJson() throws JSONException {
-        JSONArray jsonArray = new JSONArray(jsonStr);
-        List<ContactBean> list = new ArrayList<>();
-        for (int i = 0; i < jsonArray.length(); i++) {
-            ContactBean bean = new ContactBean();
-            JSONObject mainObject = jsonArray.getJSONObject(i);
-            String name = mainObject.getString("name");
-            double phone = mainObject.getDouble("phone");
-            bean.setName("Student Name: " + name);
-            bean.setPhone("Phone:" + phone);
-            //
-            list.add(bean);
-        }
-        return list;
-
-
-    }
 }
