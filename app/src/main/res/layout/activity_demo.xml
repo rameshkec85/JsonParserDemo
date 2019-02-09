@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/btn_json_parser"
@@ -25,6 +25,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ListView Demo" />
+
+        <Button
+            android:id="@+id/btn_retrofit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Retrofit Demo" />
     </LinearLayout>
 
 

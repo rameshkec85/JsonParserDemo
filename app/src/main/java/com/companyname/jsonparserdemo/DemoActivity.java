@@ -15,6 +15,7 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_json_parser;
     Button btn_scroll_list;
     Button btn_listview;
+    Button btn_retrofit;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,10 +25,12 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
         btn_json_parser = findViewById(R.id.btn_json_parser);
         btn_scroll_list = findViewById(R.id.btn_scroll_list);
         btn_listview = findViewById(R.id.btn_listview);
+        btn_retrofit = findViewById(R.id.btn_retrofit);
         //
         btn_json_parser.setOnClickListener(this);
         btn_scroll_list.setOnClickListener(this);
         btn_listview.setOnClickListener(this);
+        btn_retrofit.setOnClickListener(this);
     }
 
     @Override
@@ -40,6 +43,9 @@ public class DemoActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v.getId() == R.id.btn_listview) {
             Intent intent = new Intent(this, ListViewDemoActivity.class);
+            startActivity(intent);
+        }else if (v.getId() == R.id.btn_retrofit) {
+            Intent intent = new Intent(this, HiveDemoActivity.class);
             startActivity(intent);
         }
     }
